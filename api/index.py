@@ -53,6 +53,13 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text="感謝您的使用，若需要我的服務，請跟我說 「啟動」 謝謝~"))
         return
+        
+    if event.message.text == "測試":
+        working_status = False
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="今台電子))
+        return
     
     if working_status:
         chatgpt.add_msg(f"Human:{event.message.text}?\n")
